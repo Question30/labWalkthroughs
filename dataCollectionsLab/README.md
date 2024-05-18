@@ -30,7 +30,7 @@ const csvData =
 function parseCSV(string) {}
 ```
 
-- In the function we will create a variable we will call it strArr. We will use the String.split method on our string. This will take our string and "split" it by the provided value and return an array(list).
+- In the function we will create a variable we will call it strArr. We will use the [String.split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) method on our string. This will take our string and "split" it by the provided value and return an array(list).
 
 ```javascript
 function parseCSV(string) {
@@ -106,8 +106,8 @@ function parseColCSV(array) {
 }
 ```
 
-- Loop through each index of our parsedCSV array and split on the ",".
-  And push the results to newArr.
+- Loop through each index of our parsedCSV array and [split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) on the ",".
+  And [push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) the results to newArr.
 
 ```javascript
 function parseColCSV(array) {
@@ -223,7 +223,7 @@ function parseObj(array) {
 }
 ```
 
-- Now we will push our object into our newArr after each iteration.
+- Now we will [push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) our object into our newArr after each iteration.
 
 ```javascript
 function parseObj(array) {
@@ -253,7 +253,7 @@ Output:
 ```
 
 - The result above looks good but now we need to make the object keys lowercase.
-  We will do so using the string.toLowerCase method
+  We will do so using the [String.toLowerCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) method
 
 ```javascript
 function parseObj(array) {
@@ -283,9 +283,9 @@ Output:
 ```
 [
     {id: '42', name: 'Bruce', occupation: 'Knight', age: '41'},
-    {ID: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
-    {ID: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'},
-    {ID: '98', name: 'Bill', occupation: 'Doctor's Assistant', age: '26'},
+    {id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
+    {id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'},
+    {id: '98', name: 'Bill', occupation: 'Doctor's Assistant', age: '26'},
 ]
 ```
 
@@ -295,7 +295,7 @@ Output:
 
 #### Task 1. Remove the last element from the sorted array.
 
-- Using array.pop we can remove the last element in an array
+- Using [Array.pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) we can remove the last element in an array
 
 ```javascript
 objCsv.pop();
@@ -307,8 +307,8 @@ Output:
 ```
 [
     {id: '42', name: 'Bruce', occupation: 'Knight', age: '41'},
-    {ID: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
-    {ID: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'}
+    {id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
+    {id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'}
 ]
 ```
 
@@ -324,7 +324,7 @@ Output:
 const barry = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
 ```
 
-- Using the array.splice method we can insert barry into the array at index 1.
+- Using the [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) method we can insert barry into the array at index 1.
 
 ```javascript
 const barry = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
@@ -339,9 +339,9 @@ Output:
 ```
 [
     {id: '42', name: 'Bruce', occupation: 'Knight', age: '41'},
-    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
-    {ID: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
-    {ID: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'}
+    {id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    {id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
+    {id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'}
 ]
 ```
 
@@ -357,7 +357,7 @@ Output:
 const bilbo = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
 ```
 
-- Using the array.push mehtod add biblo to the end of the array
+- Using the [Array.push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) mehtod add biblo to the end of the array
 
 ```javascript
 const bilbo = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
@@ -372,10 +372,10 @@ Output:
 ```
 [
     {id: '42', name: 'Bruce', occupation: 'Knight', age: '41'},
-    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
-    {ID: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
-    {ID: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'},
-    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+    {id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    {Id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19},
+    {Id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'},
+    {id: "7", name: "Bilbo", occupation: "None", age: "111" }
 ]
 ```
 
@@ -409,7 +409,7 @@ function calcAvg(array) {
 - For each element(object) we want to take the age property and add it to the current sum.
 
   > [!NOTE]
-  > objects store data as strings so we need to use parseInt to convert the string age to a number
+  > objects store data as strings so we need to use [parseInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) to convert the string age to a number
 
 ```javascript
 function calcAvg(array) {
@@ -469,7 +469,7 @@ function csvFormat(array) {
 ```
 
 - we will use Object.keys to get an array of all the keys in our objects.
-  Then push the array into csvArray.
+  Then [push](mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) the array into csvArray.
 
 ```javascript
 function csvFormat(array) {
@@ -506,7 +506,7 @@ function csvFormat(array) {
 }
 ```
 
-- Push values to csvArray
+- [Push](mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) values to csvArray
 
 ```javascript
 function csvFormat(array) {
@@ -534,7 +534,7 @@ function csvFormat(array) {
 ]
 ```
 
-- Now we will use the array.flat method to get rid of the children array and turn it into a one dimensional array. Ans store the result in avariable
+- Now we will use the [Array.flat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) method to get rid of the children array and turn it into a one dimensional array. Ans store the result in a variable
 
 ```javascript
 function csvFormat(array) {
@@ -562,7 +562,7 @@ function csvFormat(array) {
 ]
 ```
 
-- Now we are going to use array.join to convert the array into a string. Store the result in a variable and return it
+- Now we are going to use [Array.join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) to convert the array into a string. Store the result in a variable and return it
 
 ```javascript
 function csvFormat(array) {

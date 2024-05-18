@@ -184,7 +184,8 @@ function parseObj(array) {
 ```
 
 - create another for loop within the for loop to go through each array stored within the parent array.
-- note: you cannot use i again so we will use j in the second for loop.
+  > [!NOTE]
+  > you cannot use i again so we will use j in the second for loop.
 
 ```javascript
 function parseObj(array) {
@@ -200,8 +201,12 @@ function parseObj(array) {
 ```
 
 - Accessing the array indexes we will store the values in the obj using key value pairs.
-- note: to access an element within a child array we use array[0][0] this returns the first element within the first child array.
-- note: to set a new key value pair in an object we use objectName[key] = value
+
+  > [!NOTE]
+  > to access an element within a child array we use array[0][0] this returns the first element within the first child array.
+
+  > [!NOTE]
+  > to set a new key value pair in an object we use objectName[key] = value
 
 ```javascript
 function parseObj(array) {
@@ -474,7 +479,7 @@ function csvFormat(array) {
 }
 ```
 
-- We will loop thorugh our array and for each element we will get an array of each value in our objects using Object.values. Then we will push the array of values into csvArray.
+- We will loop thorugh our array and for each element we will get an array of each value in our objects using Object.values and store it.
 
 ```javascript
 function csvFormat(array) {
@@ -482,7 +487,36 @@ function csvFormat(array) {
 
   csvArray.push(Object.keys(array[0]));
   for (let i = 0; i < array.length; i++) {
-    csvArray.push(Object.values(array[i]));
+    let values = Object.values(array[i]);
+  }
+}
+```
+
+- We will add \n to the first value of each array
+
+```javascript
+function csvFormat(array) {
+  let csvArray = [];
+
+  csvArray.push(Object.keys(array[0]));
+  for (let i = 0; i < array.length; i++) {
+    let values = Object.values(array[i]);
+    values[0] = "\\n" + values[0];
+  }
+}
+```
+
+- Push values to csvArray
+
+```javascript
+function csvFormat(array) {
+  let csvArray = [];
+
+  csvArray.push(Object.keys(array[0]));
+  for (let i = 0; i < array.length; i++) {
+    let values = Object.values(array[i]);
+    values[0] = "\\n" + values[0];
+    csvArray.push(values);
   }
 }
 ```
@@ -492,11 +526,11 @@ function csvFormat(array) {
 ```
 [
     ['id', 'name', 'occupation', 'age'],
-    ['42', 'Bruce', 'Knight', '41'],
-    ['48', 'Barry', 'Runner', '25'],
-    ['57', 'Bob', 'Fry Cook', '19'],
-    ['63', 'Blaine', 'Quiz Master', '58'],
-    ['7', 'Biblo', 'None', '111']
+    ['\n42', 'Bruce', 'Knight', '41'],
+    ['\n48', 'Barry', 'Runner', '25'],
+    ['\n57', 'Bob', 'Fry Cook', '19'],
+    ['\n63', 'Blaine', 'Quiz Master', '58'],
+    ['\n7', 'Biblo', 'None', '111']
 ]
 ```
 
@@ -520,11 +554,11 @@ function csvFormat(array) {
 ```
 [
     'id', 'name', 'occupation', 'age',
-    '42', 'Bruce', 'Knight', '41',
-    '48', 'Barry', 'Runner', '25',
-    '57', 'Bob', 'Fry Cook', '19',
-    '63', 'Blaine', 'Quiz Master', '58',
-    '7', 'Biblo', 'None', '111'
+    '\n42', 'Bruce', 'Knight', '41',
+    '\n48', 'Barry', 'Runner', '25',
+    '\n57', 'Bob', 'Fry Cook', '19',
+    '\n63', 'Blaine', 'Quiz Master', '58',
+    '\n7', 'Biblo', 'None', '111'
 ]
 ```
 
@@ -556,5 +590,5 @@ console.log(csv);
 Output
 
 ```
-"id, name, occupation, age, 42, Bruce, Knight, 41, 48, Barry, Runner, 25, 57, Bob, Fry Cook, 19, 63, Blaine, Quiz Master, 58, 7, Biblo, None, 111"
+"id, name, occupation, age, \n42, Bruce, Knight, 41, \n48, Barry, Runner, 25, \n57, Bob, Fry Cook, 19, \n63, Blaine, Quiz Master, 58, \n7, Biblo, None, 111"
 ```
